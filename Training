@@ -1,0 +1,235 @@
+Private Sub CommandButton1_Click()
+
+    'SALIR
+    If txt1 = "0,0" Then
+        MsgBox "PRUEBA TERMINADA"
+        End
+    End If
+    
+     'borrar
+    Range("A4:K4").Select
+    Selection.ClearContents
+    Range("k6:cp30").Select
+    Selection.ClearContents
+    Range("A1").Select
+    
+    'separar numero
+    
+    Cells(3, 1) = txt1
+    Range("A3").Select
+    Selection.TextToColumns Destination:=Range("A4"), DataType:=xlDelimited, _
+        TextQualifier:=xlDoubleQuote, ConsecutiveDelimiter:=False, Tab:=False, _
+        Semicolon:=False, Comma:=True, Space:=False, Other:=False, FieldInfo _
+        :=Array(Array(1, 1), Array(2, 1)), TrailingMinusNumbers:=True
+    Cells(5, 1) = Cells(4, 2)
+    Range(Cells(5, 2), Cells(5, 9)).Select
+    Selection.ClearContents
+    Cells(5, 1).Select
+        num = Len(ActiveCell.Value)
+    For i = 1 To num
+        ActiveCell.Offset(0, i).Value = Mid(ActiveCell.Value, i, 1)
+    Next i
+    
+    'numeros
+    Size = Cells(4, 1)
+    fil = 7
+    col = 13
+    
+    For i = 1 To num
+        valor = Cells(5, 1 + i)
+        Cells(fil, col).Select
+        'numero1
+        If valor = 1 Then
+            For q = 1 To Size
+                Cells(fil + q, col + 1) = "l"
+            Next q
+            For q = 1 To Size
+                Cells(fil + Size + q + 1, col + 1) = "l"
+            Next q
+        End If
+        
+        'numero2
+        If valor = 2 Then
+            For q = 1 To Size
+                Cells(fil, col + q) = "-"
+            Next q
+            For q = 1 To Size
+                Cells(fil + Size + 1, col + q) = "-"
+            Next q
+            For q = 1 To Size
+                Cells(fil + (Size * 2) + 2, col + q) = "-"
+            Next q
+            For q = 1 To Size
+                Cells(fil + q, col + 1 + Size) = "l"
+            Next q
+            For q = 1 To Size
+                Cells(fil + q + Size + 1, col) = "l"
+            Next q
+        End If
+        
+           'numero3
+        If valor = 3 Then
+            For q = 1 To Size
+                Cells(fil, col + q) = "-"
+            Next q
+            For q = 1 To Size
+                Cells(fil + Size + 1, col + q) = "-"
+            Next q
+            For q = 1 To Size
+                Cells(fil + (Size * 2) + 2, col + q) = "-"
+            Next q
+            For q = 1 To Size
+                Cells(fil + q, col + Size + 1) = "l"
+            Next q
+            For q = 1 To Size
+                Cells(fil + q + Size + 1, col + Size + 1) = "l"
+            Next q
+        End If
+        
+        'numero4
+        If valor = 4 Then
+            For q = 1 To Size
+                Cells(fil + Size + 1, col + q) = "-"
+            Next q
+            For q = 1 To Size
+                Cells(fil + q, col) = "l"
+            Next q
+            For q = 1 To Size
+                Cells(fil + q, col + 1 + Size) = "l"
+            Next q
+            For q = 1 To Size
+                Cells(fil + q + Size + 1, col + 1 + Size) = "l"
+            Next q
+        End If
+        
+        'numero5
+        If valor = 5 Then
+            For q = 1 To Size
+                Cells(fil, col + q) = "-"
+            Next q
+            For q = 1 To Size
+                Cells(fil + Size + 1, col + q) = "-"
+            Next q
+            For q = 1 To Size
+                Cells(fil + (Size * 2) + 2, col + q) = "-"
+            Next q
+            For q = 1 To Size
+                Cells(fil + q, col) = "l"
+            Next q
+            For q = 1 To Size
+                Cells(fil + q + Size + 1, col + 1 + Size) = "l"
+            Next q
+        End If
+        
+        'numero6
+        If valor = 6 Then
+            For q = 1 To Size
+                Cells(fil, col + q) = "-"
+            Next q
+            For q = 1 To Size
+                Cells(fil + Size + 1, col + q) = "-"
+            Next q
+            For q = 1 To Size
+                Cells(fil + (Size * 2) + 2, col + q) = "-"
+            Next q
+            For q = 1 To Size
+                Cells(fil + q, col) = "l"
+            Next q
+            For q = 1 To Size
+                Cells(fil + q + Size + 1, col) = "l"
+            Next q
+            For q = 1 To Size
+                Cells(fil + q + Size + 1, col + 1 + Size) = "l"
+            Next q
+        End If
+        
+        'numero7
+        If valor = 7 Then
+            For q = 1 To Size
+                Cells(fil, col + q) = "-"
+            Next q
+             For q = 1 To Size
+                Cells(fil + q, col + 1 + Size) = "l"
+            Next q
+            For q = 1 To Size
+                Cells(fil + q + Size + 1, col + 1 + Size) = "l"
+            Next q
+        End If
+    
+    'numero8
+        If valor = 8 Then
+            For q = 1 To Size
+                Cells(fil, col + q) = "-"
+            Next q
+            For q = 1 To Size
+                Cells(fil + Size + 1, col + q) = "-"
+            Next q
+            For q = 1 To Size
+                Cells(fil + (Size * 2) + 2, col + q) = "-"
+            Next q
+            For q = 1 To Size
+                Cells(fil + q, col) = "l"
+            Next q
+            For q = 1 To Size
+                Cells(fil + q + Size + 1, col) = "l"
+            Next q
+            For q = 1 To Size
+                Cells(fil + q, col + 1 + Size) = "l"
+            Next q
+            For q = 1 To Size
+                Cells(fil + q + Size + 1, col + 1 + Size) = "l"
+            Next q
+        End If
+        
+        'numero9
+        If valor = 9 Then
+            For q = 1 To Size
+                Cells(fil, col + q) = "-"
+            Next q
+            For q = 1 To Size
+                Cells(fil + Size + 1, col + q) = "-"
+            Next q
+            For q = 1 To Size
+                Cells(fil + (Size * 2) + 2, col + q) = "-"
+            Next q
+            For q = 1 To Size
+                Cells(fil + q, col) = "l"
+            Next q
+            For q = 1 To Size
+                Cells(fil + q, col + 1 + Size) = "l"
+            Next q
+            For q = 1 To Size
+                Cells(fil + q + Size + 1, col + 1 + Size) = "l"
+            Next q
+        End If
+    
+        'numero0
+        If valor = 0 Then
+            For q = 1 To Size
+                Cells(fil, col + q) = "-"
+            Next q
+            For q = 1 To Size
+                Cells(fil + (Size * 2) + 2, col + q) = "-"
+            Next q
+            For q = 1 To Size
+                Cells(fil + q, col) = "l"
+            Next q
+            For q = 1 To Size
+                Cells(fil + q + Size + 1, col) = "l"
+            Next q
+            For q = 1 To Size
+                Cells(fil + q, col + 1 + Size) = "l"
+            Next q
+            For q = 1 To Size
+                Cells(fil + q + Size + 1, col + 1 + Size) = "l"
+            Next q
+        End If
+        
+        col = col + Size + 3
+
+    
+    Next i
+        
+   Range("a1").Select
+    
+End Sub
